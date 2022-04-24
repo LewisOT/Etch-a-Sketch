@@ -38,8 +38,11 @@ main {
   column-gap:0; */
   height: 500px;
   width: 500px;
-  background-color: antiquewhite;
+  background-color: #c8c8c8;
+  border: 50px #ea0517 solid;
+  border-bottom: 65px #ea0517 solid ;
   padding:0;
+  margin-bottom: 10%;
 }
 
 .boxes {
