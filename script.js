@@ -1,29 +1,6 @@
 let gridBox = document.querySelector(".grid-container")
-let bts = document.querySelectorAll("input[name=toGrid]")
+let bts = document.querySelectorAll("input[name=toControls]")
 var counter = 0;
-
-
-
-// helper function to decide the grid system
-function chooser(event) {
-    switch (this.value)
-    {
-        case 'bySixteen':
-            sixteen();
-            this.removeEventListener("click", chooser)
-            break;
-        case 'byFifty':
-            fifty();
-            this.removeEventListener("click", chooser)
-            break;
-        case 'byHundred':
-            hundred();
-            this.removeEventListener("click", chooser)
-            break;
-    }
-    counter++
-    autoReset(counter)
-}
 
 //delete children grid of divs
 function deleteChild() {
@@ -38,8 +15,44 @@ function deleteChild() {
 }
 
 
+// helper function to decide the grid system
+function chooser(event) {
+    switch (this.value)
+    {
+        case 'bySixteen':
+            // this.checked = false;
+            sixteen();
+            this.removeEventListener("click", chooser)
+
+            break;
+        case 'byFifty':
+            // this.checked = false;
+
+            fifty();
+            this.removeEventListener("click", chooser)
+
+            break;
+        case 'byHundred':
+            // this.checked = false;
+
+            hundred();
+            this.removeEventListener("click", chooser)
+
+            break;
+        case 'toClear':
+            // this.checked = false;
+            deleteChild()
+            console.log('toClear')
+            break;
+    }
+    counter++
+    autoReset(counter)
+}
+
+
+
 // Add an event listener to each grid buttons
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 4; i++) {
     bts[i].addEventListener("click", chooser)
 }
 
@@ -68,7 +81,7 @@ for (let i = 0; i < 256; i++) {
     tinyBox.style.width = "6.25%"
     tinyBox.style.height = "6.25%"
     tinyBox.addEventListener("mouseenter", function(event){
-    tinyBox.style.backgroundColor = "black"
+    tinyBox.style.backgroundColor = "rgba(60,60,60,255)"
     })
 }
 }
@@ -84,7 +97,7 @@ for (let i = 0; i < 2500; i++) {
     tinyBox.style.width = "2%"
     tinyBox.style.height = "2%"
     tinyBox.addEventListener("mouseenter", function(event){
-    tinyBox.style.backgroundColor = "black"
+    tinyBox.style.backgroundColor = "rgba(60,60,60,255)"
     })
 }
 }
@@ -100,7 +113,7 @@ for (let i = 0; i < 10000; i++) {
     tinyBox.style.width = "1%"
     tinyBox.style.height = "1%"
     tinyBox.addEventListener("mouseenter", function(event){
-    tinyBox.style.backgroundColor = "black"
+    tinyBox.style.backgroundColor = "rgba(60,60,60,255)"
     })
 }
 }
