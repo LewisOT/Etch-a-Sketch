@@ -42,7 +42,6 @@ function chooser(event) {
         case 'toClear':
             // this.checked = false;
             deleteChild()
-            console.log('toClear')
             break;
     }
     counter++
